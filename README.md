@@ -1,1 +1,0 @@
-# connector-red-canary
