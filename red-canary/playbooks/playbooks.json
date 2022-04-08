@@ -1,0 +1,889 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Red Canary - 1.0.0",
+      "description": "Sample playbooks for \"Red Canary\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "/api/3/images/8f7b5e85-c4be-4a41-b068-55d912e28375",
+      "uuid": "bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
+      "id": 1325,
+      "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "createDate": 1649397930,
+      "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "modifyDate": 1649397930,
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Endpoint",
+          "aliasName": null,
+          "tag": "#Red Canary",
+          "description": "Get a particular endpoint by unique identifier from Red Canary based on endpoint ID you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649400343,
+          "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c88ee6fd-a59f-4c65-9c07-d34ffe06d42e",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Endpoint",
+              "description": null,
+              "arguments": {
+                "name": "Red Canary",
+                "config": "453f48ea-18a7-4a36-a9d0-ec899dafab71",
+                "params": {
+                  "endpoint_id": 87645
+                },
+                "version": "1.0.0",
+                "connector": "red-canary",
+                "operation": "get_endpoint",
+                "operationTitle": "Get Endpoint",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "4b980ea9-3cef-4905-99df-8b4518e04f7a",
+              "id": 60128
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "6ac7ebb6-7f47-4057-990d-365c66505924",
+                "title": "Red Canary: Get Endpoint",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "c88ee6fd-a59f-4c65-9c07-d34ffe06d42e",
+              "id": 60127
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Get Endpoint",
+              "targetStep": "/api/3/workflow_steps/4b980ea9-3cef-4905-99df-8b4518e04f7a",
+              "sourceStep": "/api/3/workflow_steps/c88ee6fd-a59f-4c65-9c07-d34ffe06d42e",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "b3fbb641-a72f-49eb-bd41-8e1c8650b167"
+            }
+          ],
+          "priority": null,
+          "uuid": "022e99de-ea76-46f5-889f-7b94476d51eb",
+          "recordTags": [
+            "RedCanary",
+            "red-canary"
+          ],
+          "id": 18092,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1649397930,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649400343,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Update Remediation State",
+          "aliasName": null,
+          "tag": "#Red Canary",
+          "description": "Update the remediation state of detection in Red Canary based on input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649400906,
+          "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ea5646a1-04fe-4497-b19b-4b79de5fbe3f",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Remediation State",
+              "description": null,
+              "arguments": {
+                "name": "Red Canary",
+                "config": "453f48ea-18a7-4a36-a9d0-ec899dafab71",
+                "params": {
+                  "comment": "",
+                  "detection_id": 37623,
+                  "remediation_state": "Not Remediated False Positive"
+                },
+                "version": "1.0.0",
+                "connector": "red-canary",
+                "operation": "update_remediation_state",
+                "operationTitle": "Update Remediation State",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "da5fe1cf-2112-4212-a791-ef71a5447ac5",
+              "id": 60124
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "f8c2552e-6872-4590-8bc9-cac8d3f2ed91",
+                "title": "Red Canary: Update Remediation State",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "ea5646a1-04fe-4497-b19b-4b79de5fbe3f",
+              "id": 60123
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Update Remediation State",
+              "targetStep": "/api/3/workflow_steps/da5fe1cf-2112-4212-a791-ef71a5447ac5",
+              "sourceStep": "/api/3/workflow_steps/ea5646a1-04fe-4497-b19b-4b79de5fbe3f",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "878a533e-bc88-41c2-adb5-3a88a3bc211d"
+            }
+          ],
+          "priority": null,
+          "uuid": "26fae2af-598f-4d69-b4ea-656bae390cad",
+          "recordTags": [
+            "RedCanary",
+            "red-canary"
+          ],
+          "id": 18090,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1649397930,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649400906,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Detection",
+          "aliasName": null,
+          "tag": "#Red Canary",
+          "description": "Get a particular detection by unique identifier from Red Canary based on detection ID you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649400262,
+          "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/083c1301-0479-41e3-9d9f-209e0a4de7bb",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "e5014a40-ef64-4ac1-ba90-944b5833bcf8",
+                "title": "Red Canary: Get Detection",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "083c1301-0479-41e3-9d9f-209e0a4de7bb",
+              "id": 60117
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Detection",
+              "description": null,
+              "arguments": {
+                "name": "Red Canary",
+                "config": "453f48ea-18a7-4a36-a9d0-ec899dafab71",
+                "params": {
+                  "detection_id": 54672
+                },
+                "version": "1.0.0",
+                "connector": "red-canary",
+                "operation": "get_detection",
+                "operationTitle": "Get Detection",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "1eecd1f6-a4d6-4c58-b179-a9123d44e531",
+              "id": 60118
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Get Detection",
+              "targetStep": "/api/3/workflow_steps/1eecd1f6-a4d6-4c58-b179-a9123d44e531",
+              "sourceStep": "/api/3/workflow_steps/083c1301-0479-41e3-9d9f-209e0a4de7bb",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "885d2c21-c205-4410-9336-0d46048ec05f"
+            }
+          ],
+          "priority": null,
+          "uuid": "2a2d9506-5987-4175-9b42-b56af669685e",
+          "recordTags": [
+            "RedCanary",
+            "red-canary"
+          ],
+          "id": 18087,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1649397930,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649400262,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Isolate Endpoint",
+          "aliasName": null,
+          "tag": "#Red Canary",
+          "description": "Isolate a set of endpoints by endpoint IDs from Red Canary.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649401779,
+          "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/28e5d391-8d04-4cfe-bc11-264d992a7d31",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Isolate Endpoint",
+              "description": null,
+              "arguments": {
+                "name": "Red Canary",
+                "config": "453f48ea-18a7-4a36-a9d0-ec899dafab71",
+                "params": {
+                  "ids": "51243,32465,64523,13245"
+                },
+                "version": "1.0.0",
+                "connector": "red-canary",
+                "operation": "isolate_endpoint",
+                "operationTitle": "Isolate Endpoint",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "19b1c51d-9fb6-4e46-9e94-5e8b148ae117",
+              "id": 60130
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "ce9c34be-d635-424f-a6d8-a78629743727",
+                "title": "Red Canary: Isolate Endpoint",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "28e5d391-8d04-4cfe-bc11-264d992a7d31",
+              "id": 60129
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Isolate Endpoint",
+              "targetStep": "/api/3/workflow_steps/19b1c51d-9fb6-4e46-9e94-5e8b148ae117",
+              "sourceStep": "/api/3/workflow_steps/28e5d391-8d04-4cfe-bc11-264d992a7d31",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "35771dd5-af1b-4e7f-8281-c716de423b60"
+            }
+          ],
+          "priority": null,
+          "uuid": "6b6c03e4-7f11-4045-a197-9411e6741a84",
+          "recordTags": [
+            "RedCanary",
+            "red-canary"
+          ],
+          "id": 18093,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1649397930,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649401779,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Acknowledge Detection",
+          "aliasName": null,
+          "tag": "#Red Canary",
+          "description": "Mark a detection as acknowledged to inform your team that it is being handled in Red Canary.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649398632,
+          "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/d069f0d3-5b65-41f8-83b7-3609d571f6fb",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Acknowledge Detection",
+              "description": null,
+              "arguments": {
+                "name": "Red Canary",
+                "config": "453f48ea-18a7-4a36-a9d0-ec899dafab71",
+                "params": {
+                  "detection_id": 14375
+                },
+                "version": "1.0.0",
+                "connector": "red-canary",
+                "operation": "acknowledge_detection",
+                "operationTitle": "Acknowledge Detection",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "badd7e26-dfd3-4838-b983-11ce41d2a9e5",
+              "id": 60122
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "4f7fca17-0d0d-4cc3-875c-50ba6860b6c6",
+                "title": "Red Canary: Acknowledge Detection",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "d069f0d3-5b65-41f8-83b7-3609d571f6fb",
+              "id": 60121
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Acknowledge Detection",
+              "targetStep": "/api/3/workflow_steps/badd7e26-dfd3-4838-b983-11ce41d2a9e5",
+              "sourceStep": "/api/3/workflow_steps/d069f0d3-5b65-41f8-83b7-3609d571f6fb",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "85efc288-69da-4727-9dd2-7fb91b4ca656"
+            }
+          ],
+          "priority": null,
+          "uuid": "6cf90d31-e26a-4d78-9aa6-89c01f18563b",
+          "recordTags": [
+            "RedCanary",
+            "red-canary"
+          ],
+          "id": 18089,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1649397930,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649398632,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "List Detection Marked Indicators of Compromise",
+          "aliasName": null,
+          "tag": "#Red Canary",
+          "description": "Fetch a list of indicators of compromise associated with the given detection from Red Canary.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649400586,
+          "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/b2bb1f92-1b72-4851-8ecb-0ea9fe4964be",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "2eee86c4-7a2f-4f45-95d3-ef53428b8ab3",
+                "title": "Red Canary: List Detection Marked Indicators of Compromise",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "b2bb1f92-1b72-4851-8ecb-0ea9fe4964be",
+              "id": 60119
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "List Detection Marked Indicators of Compromise",
+              "description": null,
+              "arguments": {
+                "name": "Red Canary",
+                "config": "453f48ea-18a7-4a36-a9d0-ec899dafab71",
+                "params": {
+                  "page": 1,
+                  "per_page": 50,
+                  "detection_id": 65423
+                },
+                "version": "1.0.0",
+                "connector": "red-canary",
+                "operation": "list_detection_marked_indicators_of_compromise",
+                "operationTitle": "List Detection Marked Indicators of Compromise",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "f3a8c330-4a45-4144-b21d-1606364ca8cc",
+              "id": 60120
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> List Detection Marked Indicators of Compromise",
+              "targetStep": "/api/3/workflow_steps/f3a8c330-4a45-4144-b21d-1606364ca8cc",
+              "sourceStep": "/api/3/workflow_steps/b2bb1f92-1b72-4851-8ecb-0ea9fe4964be",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "a6d69c6b-253f-466a-ad05-f7794fd5e311"
+            }
+          ],
+          "priority": null,
+          "uuid": "8930233e-0d65-41db-8596-a6aad5b8b0d2",
+          "recordTags": [
+            "RedCanary",
+            "red-canary"
+          ],
+          "id": 18088,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1649397930,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649400586,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Deisolate Endpoint",
+          "aliasName": null,
+          "tag": "#Red Canary",
+          "description": "Deisolate a set of endpoints by endpoint IDs from Red Canary.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649399448,
+          "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/0f273550-7c2f-4b45-8766-cf2b9a754997",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "dbc4f737-3571-4b9d-9ca2-df769a79a75a",
+                "title": "Red Canary: Deisolate Endpoint",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "0f273550-7c2f-4b45-8766-cf2b9a754997",
+              "id": 60131
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Deisolate Endpoint",
+              "description": null,
+              "arguments": {
+                "name": "Red Canary",
+                "config": "453f48ea-18a7-4a36-a9d0-ec899dafab71",
+                "params": {
+                  "ids": "62545,65498,36742,54328"
+                },
+                "version": "1.0.0",
+                "connector": "red-canary",
+                "operation": "deisolate_endpoint",
+                "operationTitle": "Deisolate Endpoint",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "3fdfb17f-af39-4178-a10f-90142cfa70f5",
+              "id": 60132
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Deisolate Endpoint",
+              "targetStep": "/api/3/workflow_steps/3fdfb17f-af39-4178-a10f-90142cfa70f5",
+              "sourceStep": "/api/3/workflow_steps/0f273550-7c2f-4b45-8766-cf2b9a754997",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "0c000fc7-1166-4f7b-a741-7478bdbb35e8"
+            }
+          ],
+          "priority": null,
+          "uuid": "96acde0d-5fa7-4ca1-9b37-aa3b6773b36f",
+          "recordTags": [
+            "RedCanary",
+            "red-canary"
+          ],
+          "id": 18094,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1649397930,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649399448,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "List Detections",
+          "aliasName": null,
+          "tag": "#Red Canary",
+          "description": "Get a list of confirmed detections from Red Canary based on input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649400675,
+          "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/68b2ac03-f53f-41b8-9bb5-f70495db1173",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "List Detections",
+              "description": null,
+              "arguments": {
+                "name": "Red Canary",
+                "config": "453f48ea-18a7-4a36-a9d0-ec899dafab71",
+                "params": {
+                  "page": 1,
+                  "since": "2022-02-02T17:30:00.000Z",
+                  "per_page": 50
+                },
+                "version": "1.0.0",
+                "connector": "red-canary",
+                "operation": "list_detections",
+                "operationTitle": "List Detections",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "3a117b7c-ace6-4a7b-ba62-d5a7acc498b7",
+              "id": 60116
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "5e2f1c62-282f-4d67-aae7-1ae49d4428e1",
+                "title": "Red Canary: List Detections",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "68b2ac03-f53f-41b8-9bb5-f70495db1173",
+              "id": 60115
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> List Detections",
+              "targetStep": "/api/3/workflow_steps/3a117b7c-ace6-4a7b-ba62-d5a7acc498b7",
+              "sourceStep": "/api/3/workflow_steps/68b2ac03-f53f-41b8-9bb5-f70495db1173",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "ea8a57e1-0332-4db6-8caa-ef68f108c4b7"
+            }
+          ],
+          "priority": null,
+          "uuid": "a4d350df-ff25-407e-8bd9-22dc9e73fb77",
+          "recordTags": [
+            "RedCanary",
+            "red-canary"
+          ],
+          "id": 18086,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1649397930,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649400675,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "List Endpoints",
+          "aliasName": null,
+          "tag": "#Red Canary",
+          "description": "Get a list of endpoints from Red Canary based on input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1649400799,
+          "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/cb28fc33-c575-46c8-9197-d1d22b42b54d",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "9c0d8df2-3c31-4065-b3c2-e454ab06463c",
+                "title": "Red Canary: List Endpoints",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "cb28fc33-c575-46c8-9197-d1d22b42b54d",
+              "id": 60125
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "List Endpoints",
+              "description": null,
+              "arguments": {
+                "name": "Red Canary",
+                "config": "453f48ea-18a7-4a36-a9d0-ec899dafab71",
+                "params": {
+                  "page": 1,
+                  "order_by": "Hostname",
+                  "per_page": 50,
+                  "filter_query": "{\n  \"id\": 42654\n}"
+                },
+                "version": "1.0.0",
+                "connector": "red-canary",
+                "operation": "list_endpoints",
+                "operationTitle": "List Endpoints",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "e7891134-9dfa-498e-808b-ce91f7294362",
+              "id": 60126
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> List Endpoints",
+              "targetStep": "/api/3/workflow_steps/e7891134-9dfa-498e-808b-ce91f7294362",
+              "sourceStep": "/api/3/workflow_steps/cb28fc33-c575-46c8-9197-d1d22b42b54d",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "a2172e43-6460-46fb-b825-8849841fc912"
+            }
+          ],
+          "priority": null,
+          "uuid": "c72ff3c8-1bc0-4b79-8b90-7e9e5acd65d0",
+          "recordTags": [
+            "RedCanary",
+            "red-canary"
+          ],
+          "id": 18091,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1649397930,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1649400799,
+          "owners": [],
+          "isPrivate": false
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "RedCanary",
+    "red-canary"
+  ]
+}
