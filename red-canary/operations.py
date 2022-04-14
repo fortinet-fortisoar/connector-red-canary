@@ -24,7 +24,7 @@ class RedCanary():
         self.verify_ssl = config.get('verify_ssl')
 
     def make_api_call(self, method='GET', endpoint=None, params=None, data=None,
-                      json=None, flag=False):
+                      json=None):
         if endpoint:
             url = '{0}{1}'.format(self.server_url, endpoint)
         else:
@@ -38,7 +38,7 @@ class RedCanary():
             if response.ok:
                 result = response.json()
                 if result.get('error'):
-                    raise ConnectorError('{}'.format(result.get('error').get('message')))
+                    raise ConnectorError('{0}'.format(result.get('error').get('message')))
                 if response.status_code == 204 or response.status_code == 201:
                     return {"Status": "Success", "Message": "Executed successfully"}
                 return result

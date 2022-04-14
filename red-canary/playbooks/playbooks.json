@@ -28,7 +28,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1649400343,
+          "lastModifyDate": 1649939053,
           "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/c88ee6fd-a59f-4c65-9c07-d34ffe06d42e",
@@ -60,7 +60,7 @@
             },
             {
               "@type": "WorkflowStep",
-              "name": "Alerts",
+              "name": "Start",
               "description": null,
               "arguments": {
                 "route": "6ac7ebb6-7f47-4057-990d-365c66505924",
@@ -71,9 +71,11 @@
                 "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.input.records[0]}}"
+                    "params": [],
+                    "records": "{{vars.input.records}}"
                   }
                 },
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
                 "singleRecordExecution": false
               },
@@ -106,7 +108,7 @@
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
           "createDate": 1649397930,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1649400343,
+          "modifyDate": 1649939053,
           "owners": [],
           "isPrivate": false
         },
@@ -123,7 +125,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1649400906,
+          "lastModifyDate": 1649939252,
           "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/ea5646a1-04fe-4497-b19b-4b79de5fbe3f",
@@ -157,7 +159,7 @@
             },
             {
               "@type": "WorkflowStep",
-              "name": "Alerts",
+              "name": "Start",
               "description": null,
               "arguments": {
                 "route": "f8c2552e-6872-4590-8bc9-cac8d3f2ed91",
@@ -168,9 +170,11 @@
                 "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.input.records[0]}}"
+                    "params": [],
+                    "records": "{{vars.input.records}}"
                   }
                 },
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
                 "singleRecordExecution": false
               },
@@ -203,7 +207,7 @@
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
           "createDate": 1649397930,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1649400906,
+          "modifyDate": 1649939252,
           "owners": [],
           "isPrivate": false
         },
@@ -220,14 +224,14 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1649400262,
+          "lastModifyDate": 1649938949,
           "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/083c1301-0479-41e3-9d9f-209e0a4de7bb",
           "steps": [
             {
               "@type": "WorkflowStep",
-              "name": "Alerts",
+              "name": "Start",
               "description": null,
               "arguments": {
                 "route": "e5014a40-ef64-4ac1-ba90-944b5833bcf8",
@@ -238,9 +242,11 @@
                 "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.input.records[0]}}"
+                    "params": [],
+                    "records": "{{vars.input.records}}"
                   }
                 },
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
                 "singleRecordExecution": false
               },
@@ -298,7 +304,7 @@
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
           "createDate": 1649397930,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1649400262,
+          "modifyDate": 1649938949,
           "owners": [],
           "isPrivate": false
         },
@@ -315,7 +321,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1649401779,
+          "lastModifyDate": 1649939108,
           "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/28e5d391-8d04-4cfe-bc11-264d992a7d31",
@@ -347,7 +353,7 @@
             },
             {
               "@type": "WorkflowStep",
-              "name": "Alerts",
+              "name": "Start",
               "description": null,
               "arguments": {
                 "route": "ce9c34be-d635-424f-a6d8-a78629743727",
@@ -358,9 +364,11 @@
                 "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.input.records[0]}}"
+                    "params": [],
+                    "records": "{{vars.input.records}}"
                   }
                 },
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
                 "singleRecordExecution": false
               },
@@ -393,7 +401,7 @@
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
           "createDate": 1649397930,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1649401779,
+          "modifyDate": 1649939108,
           "owners": [],
           "isPrivate": false
         },
@@ -410,7 +418,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1649398632,
+          "lastModifyDate": 1649938827,
           "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/d069f0d3-5b65-41f8-83b7-3609d571f6fb",
@@ -442,7 +450,7 @@
             },
             {
               "@type": "WorkflowStep",
-              "name": "Alerts",
+              "name": "Start",
               "description": null,
               "arguments": {
                 "route": "4f7fca17-0d0d-4cc3-875c-50ba6860b6c6",
@@ -453,9 +461,11 @@
                 "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.input.records[0]}}"
+                    "params": [],
+                    "records": "{{vars.input.records}}"
                   }
                 },
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
                 "singleRecordExecution": false
               },
@@ -488,7 +498,7 @@
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
           "createDate": 1649397930,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1649398632,
+          "modifyDate": 1649938826,
           "owners": [],
           "isPrivate": false
         },
@@ -505,14 +515,14 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1649400586,
+          "lastModifyDate": 1649939141,
           "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/b2bb1f92-1b72-4851-8ecb-0ea9fe4964be",
           "steps": [
             {
               "@type": "WorkflowStep",
-              "name": "Alerts",
+              "name": "Start",
               "description": null,
               "arguments": {
                 "route": "2eee86c4-7a2f-4f45-95d3-ef53428b8ab3",
@@ -523,9 +533,11 @@
                 "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.input.records[0]}}"
+                    "params": [],
+                    "records": "{{vars.input.records}}"
                   }
                 },
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
                 "singleRecordExecution": false
               },
@@ -585,7 +597,7 @@
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
           "createDate": 1649397930,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1649400586,
+          "modifyDate": 1649939141,
           "owners": [],
           "isPrivate": false
         },
@@ -602,14 +614,14 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1649399448,
+          "lastModifyDate": 1649938875,
           "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/0f273550-7c2f-4b45-8766-cf2b9a754997",
           "steps": [
             {
               "@type": "WorkflowStep",
-              "name": "Alerts",
+              "name": "Start",
               "description": null,
               "arguments": {
                 "route": "dbc4f737-3571-4b9d-9ca2-df769a79a75a",
@@ -620,9 +632,11 @@
                 "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.input.records[0]}}"
+                    "params": [],
+                    "records": "{{vars.input.records}}"
                   }
                 },
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
                 "singleRecordExecution": false
               },
@@ -653,7 +667,7 @@
               },
               "status": null,
               "top": "120",
-              "left": "188",
+              "left": "200",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "3fdfb17f-af39-4178-a10f-90142cfa70f5",
               "id": 60132
@@ -680,7 +694,7 @@
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
           "createDate": 1649397930,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1649399448,
+          "modifyDate": 1649938875,
           "owners": [],
           "isPrivate": false
         },
@@ -697,7 +711,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1649400675,
+          "lastModifyDate": 1649939157,
           "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/68b2ac03-f53f-41b8-9bb5-f70495db1173",
@@ -731,7 +745,7 @@
             },
             {
               "@type": "WorkflowStep",
-              "name": "Alerts",
+              "name": "Start",
               "description": null,
               "arguments": {
                 "route": "5e2f1c62-282f-4d67-aae7-1ae49d4428e1",
@@ -742,9 +756,11 @@
                 "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.input.records[0]}}"
+                    "params": [],
+                    "records": "{{vars.input.records}}"
                   }
                 },
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
                 "singleRecordExecution": false
               },
@@ -777,7 +793,7 @@
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
           "createDate": 1649397930,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1649400675,
+          "modifyDate": 1649939156,
           "owners": [],
           "isPrivate": false
         },
@@ -794,14 +810,14 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1649400799,
+          "lastModifyDate": 1649939203,
           "collection": "/api/3/workflow_collections/bb5b2635-0f73-4fde-a46b-ab6f7c22078a",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/cb28fc33-c575-46c8-9197-d1d22b42b54d",
           "steps": [
             {
               "@type": "WorkflowStep",
-              "name": "Alerts",
+              "name": "Start",
               "description": null,
               "arguments": {
                 "route": "9c0d8df2-3c31-4065-b3c2-e454ab06463c",
@@ -812,9 +828,11 @@
                 "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.input.records[0]}}"
+                    "params": [],
+                    "records": "{{vars.input.records}}"
                   }
                 },
+                "executeButtonText": "Execute",
                 "noRecordExecution": true,
                 "singleRecordExecution": false
               },
@@ -875,7 +893,7 @@
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
           "createDate": 1649397930,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1649400799,
+          "modifyDate": 1649939203,
           "owners": [],
           "isPrivate": false
         }

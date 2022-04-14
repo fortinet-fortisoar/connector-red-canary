@@ -45,7 +45,7 @@
   "operations": [
     {
       "operation": "list_detections",
-      "title": "List Detections",
+      "title": "Get Detections List",
       "description": "Get a list of confirmed detections from Red Canary based on input parameters you have specified.",
       "category": "investigation",
       "annotation": "list_detections",
@@ -572,7 +572,7 @@
     },
     {
       "operation": "list_endpoints",
-      "title": "List Endpoints",
+      "title": "Get Endpoints List",
       "description": "Get a list of endpoints from Red Canary based on input parameters you have specified.",
       "category": "investigation",
       "annotation": "list_endpoints",
@@ -727,7 +727,7 @@
     },
     {
       "operation": "get_endpoint",
-      "title": "Get Endpoint",
+      "title": "Get Endpoint Details",
       "description": "Get a particular endpoint by unique identifier from Red Canary based on endpoint ID you have specified.",
       "category": "investigation",
       "annotation": "get_endpoint",
@@ -850,7 +850,10 @@
       "description": "Isolate a set of endpoints by endpoint IDs from Red Canary.",
       "category": "investigation",
       "annotation": "isolate_endpoint",
-      "output_schema": {},
+      "output_schema": {
+        "Status": "",
+        "Message": ""
+      },
       "enabled": true,
       "parameters": [
         {
@@ -861,7 +864,7 @@
           "type": "text",
           "name": "ids",
           "value": "",
-          "tooltip": "ID of the endpoints.",
+          "tooltip": "Comma Separated ID of the endpoints.",
           "description": "A comma separated string of endpoint IDs to isolate from Red Canary."
         }
       ]
@@ -872,7 +875,10 @@
       "description": "Deisolate a set of endpoints by endpoint IDs from Red Canary.",
       "category": "investigation",
       "annotation": "deisolate_endpoint",
-      "output_schema": {},
+      "output_schema": {
+        "Status": "",
+        "Message": ""
+      },
       "enabled": true,
       "parameters": [
         {
@@ -883,7 +889,7 @@
           "type": "text",
           "name": "ids",
           "value": "",
-          "tooltip": "ID of the endpoints.",
+          "tooltip": "Comma Separated ID of the endpoints.",
           "description": "A comma separated string of endpoint IDs to deisolate from Red Canary."
         }
       ]
