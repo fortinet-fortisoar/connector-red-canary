@@ -1,0 +1,898 @@
+{
+  "name": "red-canary",
+  "label": "Red Canary",
+  "description": "Red Canary collects endpoint data using Carbon Black Response and CrowdStrike Falcon. The collected data is standardized into a common schema, which allows teams to detect, analyze and respond to security incidents.",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Endpoint Protection",
+  "icon_small_name": "RedCanary_small.png",
+  "icon_large_name": "RedCanary_large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "server_url",
+        "description": "URL of the Red Canary server to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "API Key",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "api_key",
+        "description": "API key used to access the Red Canary server to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "list_detections",
+      "title": "Get Detections List",
+      "description": "Get a list of confirmed detections from Red Canary based on input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "list_detections",
+      "output_schema": {
+        "type": "",
+        "id": "",
+        "attributes": {
+          "headline": "",
+          "confirmed_at": "",
+          "summary": "",
+          "severity": "",
+          "last_activity_seen_at": "",
+          "classification": {
+            "superclassification": "",
+            "subclassification": []
+          },
+          "time_of_occurrence": "",
+          "last_acknowledged_at": "",
+          "last_acknowledged_by": {
+            "type": "",
+            "attributes": {
+              "id": "",
+              "email": "",
+              "name": "",
+              "name_and_email": ""
+            }
+          },
+          "last_remediated_status": {
+            "reason": "",
+            "remediation_state": "",
+            "marked_by": {
+              "type": "",
+              "attributes": {
+                "id": "",
+                "email": "",
+                "name": "",
+                "name_and_email": ""
+              }
+            },
+            "marked_at": ""
+          }
+        },
+        "hostname": "",
+        "username": "",
+        "relationships": {
+          "affected_endpoint": {
+            "links": {
+              "related": ""
+            },
+            "data": {
+              "type": "",
+              "id": ""
+            }
+          },
+          "related_endpoint_user": {
+            "links": {
+              "related": ""
+            },
+            "data": {
+              "type": "",
+              "id": ""
+            }
+          }
+        },
+        "links": {
+          "self": {
+            "href": ""
+          },
+          "activity_timeline": {
+            "href": ""
+          },
+          "detectors": {
+            "href": ""
+          }
+        }
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Page Number",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "page",
+          "value": 1,
+          "tooltip": "What page of results to fetch.",
+          "description": "What page of results to fetch from Red Canary. Defaults to first page."
+        },
+        {
+          "title": "Per Page",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "per_page",
+          "value": 50,
+          "tooltip": "How many results to return per page. Default is 50.",
+          "description": "How many results to return per page from Red Canary. Default is 50. Values exceeding the max allowed (generally 100) will error."
+        },
+        {
+          "title": "Since",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "name": "since",
+          "value": "",
+          "tooltip": "Time that limits which detections are returned.",
+          "description": "Time that limits which detections are returned from Red Canary."
+        }
+      ]
+    },
+    {
+      "operation": "get_detection",
+      "title": "Get Detection Details",
+      "description": "Get a particular detection by unique identifier from Red Canary based on detection ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_detection",
+      "output_schema": {
+        "type": "",
+        "id": "",
+        "attributes": {
+          "headline": "",
+          "confirmed_at": "",
+          "summary": "",
+          "severity": "",
+          "last_activity_seen_at": "",
+          "classification": {
+            "superclassification": "",
+            "subclassification": []
+          },
+          "time_of_occurrence": "",
+          "last_acknowledged_at": "",
+          "last_acknowledged_by": {
+            "type": "",
+            "attributes": {
+              "id": "",
+              "email": "",
+              "name": "",
+              "name_and_email": ""
+            }
+          },
+          "last_remediated_status": {
+            "reason": "",
+            "remediation_state": "",
+            "marked_by": {
+              "type": "",
+              "attributes": {
+                "id": "",
+                "email": "",
+                "name": "",
+                "name_and_email": ""
+              }
+            },
+            "marked_at": ""
+          }
+        },
+        "hostname": "",
+        "username": "",
+        "relationships": {
+          "affected_endpoint": {
+            "links": {
+              "related": ""
+            },
+            "data": {
+              "type": "",
+              "id": ""
+            }
+          },
+          "related_endpoint_user": {
+            "links": {
+              "related": ""
+            },
+            "data": {
+              "type": "",
+              "id": ""
+            }
+          }
+        },
+        "links": {
+          "self": {
+            "href": ""
+          },
+          "activity_timeline": {
+            "href": ""
+          },
+          "detectors": {
+            "href": ""
+          }
+        }
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Detection ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "detection_id",
+          "value": "",
+          "tooltip": "ID of the detection.",
+          "description": "ID of the detection whose details you want to fetch from Red Canary."
+        }
+      ]
+    },
+    {
+      "operation": "list_detection_marked_indicators_of_compromise",
+      "title": "List Detection Marked Indicators of Compromise",
+      "description": "Fetch a list of indicators of compromise associated with the given detection from Red Canary.",
+      "category": "investigation",
+      "annotation": "list_detection_marked_indicators_of_compromise",
+      "output_schema": {
+        "files": {
+          "type": "",
+          "attributes": {
+            "md5": "",
+            "sha256": "",
+            "path": "",
+            "file_type": "",
+            "binary": {
+              "type": "",
+              "attributes": {
+                "md5": "",
+                "sha256": "",
+                "digital_signature": {
+                  "type": "",
+                  "attributes": {
+                    "publisher": "",
+                    "issuer": "",
+                    "subject": "",
+                    "product": "",
+                    "signing_time": ""
+                  }
+                },
+                "internal_name": ""
+              }
+            }
+          }
+        },
+        "domain_names": {
+          "type": "",
+          "attributes": {
+            "name": "",
+            "name_defanged": "",
+            "whois": {
+              "organization": ""
+            }
+          }
+        },
+        "ip_addresses": {
+          "type": "",
+          "attributes": {
+            "ip_address": "",
+            "ip_address_defanged": "",
+            "ip_address_reverse_dns": "",
+            "ip_address_matches_rfc_1918?": "",
+            "ip_address_matches_rfc_4193?": "",
+            "ip_address_is_link_local?": ""
+          }
+        },
+        "registry_keys": {
+          "type": "",
+          "attributes": {
+            "path": ""
+          }
+        },
+        "relationships": {},
+        "links": {}
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Detection ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "detection_id",
+          "value": "",
+          "tooltip": "ID of the detection.",
+          "description": "ID of the detection whose indicators of compromise you want to fetch from Red Canary."
+        },
+        {
+          "title": "Page Number",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "page",
+          "value": 1,
+          "tooltip": "What page of results to fetch.",
+          "description": "What page of results to fetch from Red Canary. Defaults to first page."
+        },
+        {
+          "title": "Items Per Page",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "per_page",
+          "value": 50,
+          "tooltip": "How many results to return per page. Default is 50.",
+          "description": "How many results to return per page from Red Canary. Default is 50. Values exceeding the max allowed (generally 100) will error."
+        }
+      ]
+    },
+    {
+      "operation": "acknowledge_detection",
+      "title": "Acknowledge Detection",
+      "description": "Mark a detection as acknowledged to inform your team that it is being handled in Red Canary.",
+      "category": "investigation",
+      "annotation": "acknowledge_detection",
+      "output_schema": {
+        "type": "",
+        "id": "",
+        "attributes": {
+          "headline": "",
+          "confirmed_at": "",
+          "summary": "",
+          "severity": "",
+          "last_activity_seen_at": "",
+          "classification": {
+            "superclassification": "",
+            "subclassification": []
+          },
+          "time_of_occurrence": "",
+          "last_acknowledged_at": "",
+          "last_acknowledged_by": {
+            "type": "",
+            "attributes": {
+              "id": "",
+              "email": "",
+              "name": "",
+              "name_and_email": ""
+            }
+          },
+          "last_remediated_status": {
+            "reason": "",
+            "remediation_state": "",
+            "marked_by": {
+              "type": "",
+              "attributes": {
+                "id": "",
+                "email": "",
+                "name": "",
+                "name_and_email": ""
+              }
+            },
+            "marked_at": ""
+          }
+        },
+        "hostname": "",
+        "username": "",
+        "relationships": {
+          "affected_endpoint": {
+            "links": {
+              "related": ""
+            },
+            "data": {
+              "type": "",
+              "id": ""
+            }
+          },
+          "related_endpoint_user": {
+            "links": {
+              "related": ""
+            },
+            "data": {
+              "type": "",
+              "id": ""
+            }
+          }
+        },
+        "links": {
+          "self": {
+            "href": ""
+          },
+          "activity_timeline": {
+            "href": ""
+          },
+          "detectors": {
+            "href": ""
+          }
+        }
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Detection ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "detection_id",
+          "value": "",
+          "tooltip": "ID of the detection.",
+          "description": "ID of the detection which you want to acknowledge in Red Canary."
+        }
+      ]
+    },
+    {
+      "operation": "update_remediation_state",
+      "title": "Update Remediation State",
+      "description": "Update the remediation state of detection in Red Canary based on input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "update_remediation_state",
+      "output_schema": {
+        "type": "",
+        "id": "",
+        "attributes": {
+          "headline": "",
+          "confirmed_at": "",
+          "summary": "",
+          "severity": "",
+          "last_activity_seen_at": "",
+          "classification": {
+            "superclassification": "",
+            "subclassification": []
+          },
+          "time_of_occurrence": "",
+          "last_acknowledged_at": "",
+          "last_acknowledged_by": {
+            "type": "",
+            "attributes": {
+              "id": "",
+              "email": "",
+              "name": "",
+              "name_and_email": ""
+            }
+          },
+          "last_remediated_status": {
+            "reason": "",
+            "remediation_state": "",
+            "marked_by": {
+              "type": "",
+              "attributes": {
+                "id": "",
+                "email": "",
+                "name": "",
+                "name_and_email": ""
+              }
+            },
+            "marked_at": ""
+          }
+        },
+        "hostname": "",
+        "username": "",
+        "relationships": {
+          "affected_endpoint": {
+            "links": {
+              "related": ""
+            },
+            "data": {
+              "type": "",
+              "id": ""
+            }
+          },
+          "related_endpoint_user": {
+            "links": {
+              "related": ""
+            },
+            "data": {
+              "type": "",
+              "id": ""
+            }
+          }
+        },
+        "links": {
+          "self": {
+            "href": ""
+          },
+          "activity_timeline": {
+            "href": ""
+          },
+          "detectors": {
+            "href": ""
+          }
+        }
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Detection ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "detection_id",
+          "value": "",
+          "tooltip": "ID of the detection.",
+          "description": "ID of the detection of which remediation state you want to update in Red Canary."
+        },
+        {
+          "title": "Remediation State",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "options": [
+            "Remediated",
+            "Not Remediated False Positive",
+            "Not Remediated Sanctioned Activity",
+            "Not Remediated Unwarranted"
+          ],
+          "name": "remediation_state",
+          "value": "",
+          "tooltip": "The way in which the detection was remediated.",
+          "description": "The way in which the detection was remediated in Red Canary."
+        },
+        {
+          "title": "Comment",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "comment",
+          "value": "",
+          "tooltip": "The reason why the detection was remediated.",
+          "description": "Description of why and how the detection was remediated in Red Canary. This is ignored for 'remediated' state."
+        }
+      ]
+    },
+    {
+      "operation": "list_endpoints",
+      "title": "Get Endpoints List",
+      "description": "Get a list of endpoints from Red Canary based on input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "list_endpoints",
+      "output_schema": {
+        "type": "",
+        "id": "",
+        "attributes": {
+          "hostname": "",
+          "endpoint_network_addresses": [
+            {
+              "type": "",
+              "attributes": {
+                "endpoint_id": "",
+                "mac_address": {
+                  "type": "",
+                  "attributes": {
+                    "address": ""
+                  }
+                },
+                "ip_address": {
+                  "type": "",
+                  "attributes": {
+                    "ip_address": "",
+                    "ip_address_defanged": "",
+                    "ip_address_reverse_dns": "",
+                    "ip_address_matches_rfc_1918?": "",
+                    "ip_address_matches_rfc_4193?": "",
+                    "ip_address_is_link_local?": ""
+                  }
+                },
+                "observation_times": []
+              },
+              "relationships": {
+                "endpoint": {
+                  "links": {
+                    "related": ""
+                  },
+                  "data": {
+                    "type": "",
+                    "id": ""
+                  }
+                }
+              },
+              "links": {}
+            }
+          ],
+          "monitoring_status": "",
+          "endpoint_status": "",
+          "registration_time": "",
+          "last_checkin_time": "",
+          "last_activity_at": "",
+          "physical_memory_bytes": "",
+          "platform": "",
+          "operating_system": "",
+          "supports_response": "",
+          "supports_isolation": "",
+          "is_isolated": "",
+          "is_decommissioned": "",
+          "is_in_safe_mode": "",
+          "sensor": {
+            "type": "",
+            "id": "",
+            "attributes": {
+              "version": "",
+              "last_checkin_time": "",
+              "registration_time": "",
+              "group": []
+            }
+          },
+          "risk_score": "",
+          "source": "",
+          "open_risk_score": "",
+          "risk_score_since": "",
+          "reporting_tags": {
+            "reporting_tag_key1": "",
+            "reporting_tag_key2": ""
+          }
+        },
+        "relationships": {
+          "external_service": {
+            "links": {
+              "related": ""
+            },
+            "data": {
+              "type": "",
+              "id": ""
+            }
+          }
+        },
+        "links": {
+          "self": {
+            "href": ""
+          },
+          "ui": {
+            "href": ""
+          },
+          "detections": {
+            "href": ""
+          }
+        }
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Page Number",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "page",
+          "value": 1,
+          "tooltip": "What page of results to fetch.",
+          "description": "What page of results to fetch from Red Canary. Defaults to first page."
+        },
+        {
+          "title": "Per Page",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "per_page",
+          "value": 50,
+          "tooltip": "How many results to return per page. Default is 50.",
+          "description": "How many results to return per page from Red Canary. Default is 50. Values exceeding the max allowed (generally 100) will error."
+        },
+        {
+          "title": "Order By",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "options": [
+            "Hostname",
+            "ID"
+          ],
+          "name": "order_by",
+          "value": "",
+          "tooltip": "Sort the result. Default value is Hostname.",
+          "description": "Sort the result by hostname or ID from Red Canary. Default value is Hostname."
+        },
+        {
+          "title": "Other Fields",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "filter_query",
+          "tooltip": "JSON field provided to enable you to enter other fields while getting endpoint details from Red Canary. example, {\"id\":12345}",
+          "description": "(Optional) Additional fields in the JSON format that you want to get endpoint details from Red Canary. For example, {\"id\":12345}"
+        }
+      ]
+    },
+    {
+      "operation": "get_endpoint",
+      "title": "Get Endpoint Details",
+      "description": "Get a particular endpoint by unique identifier from Red Canary based on endpoint ID you have specified.",
+      "category": "investigation",
+      "annotation": "get_endpoint",
+      "output_schema": {
+        "type": "",
+        "id": "",
+        "attributes": {
+          "hostname": "",
+          "endpoint_network_addresses": [
+            {
+              "type": "",
+              "attributes": {
+                "endpoint_id": "",
+                "mac_address": {
+                  "type": "",
+                  "attributes": {
+                    "address": ""
+                  }
+                },
+                "ip_address": {
+                  "type": "",
+                  "attributes": {
+                    "ip_address": "",
+                    "ip_address_defanged": "",
+                    "ip_address_reverse_dns": "",
+                    "ip_address_matches_rfc_1918?": "",
+                    "ip_address_matches_rfc_4193?": "",
+                    "ip_address_is_link_local?": ""
+                  }
+                },
+                "observation_times": []
+              },
+              "relationships": {
+                "endpoint": {
+                  "links": {
+                    "related": ""
+                  },
+                  "data": {
+                    "type": "",
+                    "id": ""
+                  }
+                }
+              },
+              "links": {}
+            }
+          ],
+          "monitoring_status": "",
+          "endpoint_status": "",
+          "registration_time": "",
+          "last_checkin_time": "",
+          "last_activity_at": "",
+          "physical_memory_bytes": "",
+          "platform": "",
+          "operating_system": "",
+          "supports_response": "",
+          "supports_isolation": "",
+          "is_isolated": "",
+          "is_decommissioned": "",
+          "is_in_safe_mode": "",
+          "sensor": {
+            "type": "",
+            "id": "",
+            "attributes": {
+              "version": "",
+              "last_checkin_time": "",
+              "registration_time": "",
+              "group": []
+            }
+          },
+          "risk_score": "",
+          "source": "",
+          "open_risk_score": "",
+          "risk_score_since": "",
+          "reporting_tags": {
+            "reporting_tag_key1": "",
+            "reporting_tag_key2": ""
+          }
+        },
+        "relationships": {
+          "external_service": {
+            "links": {
+              "related": ""
+            },
+            "data": {
+              "type": "",
+              "id": ""
+            }
+          }
+        },
+        "links": {
+          "self": {
+            "href": ""
+          },
+          "ui": {
+            "href": ""
+          },
+          "detections": {
+            "href": ""
+          }
+        }
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Endpoint ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "endpoint_id",
+          "value": "",
+          "tooltip": "ID of the endpoint.",
+          "description": "ID of the endpoint whose details you want to fetch from Red Canary."
+        }
+      ]
+    },
+    {
+      "operation": "isolate_endpoint",
+      "title": "Isolate Endpoint",
+      "description": "Isolate a set of endpoints by endpoint IDs from Red Canary.",
+      "category": "investigation",
+      "annotation": "isolate_endpoint",
+      "output_schema": {
+        "Status": "",
+        "Message": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Endpoint IDs",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ids",
+          "value": "",
+          "tooltip": "Comma Separated ID of the endpoints.",
+          "description": "A comma separated string of endpoint IDs to isolate from Red Canary."
+        }
+      ]
+    },
+    {
+      "operation": "deisolate_endpoint",
+      "title": "Deisolate Endpoint",
+      "description": "Deisolate a set of endpoints by endpoint IDs from Red Canary.",
+      "category": "investigation",
+      "annotation": "deisolate_endpoint",
+      "output_schema": {
+        "Status": "",
+        "Message": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Endpoint IDs",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ids",
+          "value": "",
+          "tooltip": "Comma Separated ID of the endpoints.",
+          "description": "A comma separated string of endpoint IDs to deisolate from Red Canary."
+        }
+      ]
+    }
+  ]
+}
