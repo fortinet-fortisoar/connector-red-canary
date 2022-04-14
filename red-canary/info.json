@@ -161,7 +161,7 @@
     },
     {
       "operation": "get_detection",
-      "title": "Get Detection",
+      "title": "Get Detection Details",
       "description": "Get a particular detection by unique identifier from Red Canary based on detection ID you have specified.",
       "category": "investigation",
       "annotation": "get_detection",
