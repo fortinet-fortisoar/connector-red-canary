@@ -9,7 +9,7 @@
   "category": "Endpoint Protection",
   "icon_small_name": "RedCanary_small.png",
   "icon_large_name": "RedCanary_large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/red-canary/266/red-canary-v1-0-0",
   "configuration": {
     "fields": [
       {
@@ -46,7 +46,7 @@
     {
       "operation": "list_detections",
       "title": "Get Detections List",
-      "description": "Get a list of confirmed detections from Red Canary based on input parameters you have specified.",
+      "description": "Retrieves a list of all confirmed detections from Red Canary based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "list_detections",
       "output_schema": {
@@ -133,7 +133,7 @@
           "name": "page",
           "value": 1,
           "tooltip": "What page of results to fetch.",
-          "description": "What page of results to fetch from Red Canary. Defaults to first page."
+          "description": "The Page number from which you want the operation to return the results of the operation. Defaults to the first page."
         },
         {
           "title": "Per Page",
@@ -144,7 +144,7 @@
           "name": "per_page",
           "value": 50,
           "tooltip": "How many results to return per page. Default is 50.",
-          "description": "How many results to return per page from Red Canary. Default is 50. Values exceeding the max allowed (generally 100) will error."
+          "description": "The maximum number of results, per page, that this operation should return. By default, this value is set as 50. Specify a value that exceeds the maximum allowed value (generally 100) throws an error."
         },
         {
           "title": "Since",
@@ -155,14 +155,14 @@
           "name": "since",
           "value": "",
           "tooltip": "Time that limits which detections are returned.",
-          "description": "Time that limits which detections are returned from Red Canary."
+          "description": "The Datetime using which you want to filter the result set to only include only those detections that have been added by Red Canary after the specified DateTime."
         }
       ]
     },
     {
       "operation": "get_detection",
       "title": "Get Detection Details",
-      "description": "Get a particular detection by unique identifier from Red Canary based on detection ID you have specified.",
+      "description": "Retrieves details of the specified detection from Red Canary based on the unique detection ID you have specified.",
       "category": "investigation",
       "annotation": "get_detection",
       "output_schema": {
@@ -249,14 +249,14 @@
           "name": "detection_id",
           "value": "",
           "tooltip": "ID of the detection.",
-          "description": "ID of the detection whose details you want to fetch from Red Canary."
+          "description": "The unique ID of the detection whose details you want to retrieve from Red Canary."
         }
       ]
     },
     {
       "operation": "list_detection_marked_indicators_of_compromise",
       "title": "List Detection Marked Indicators of Compromise",
-      "description": "Fetch a list of indicators of compromise associated with the given detection from Red Canary.",
+      "description": "Retrieves a list of indicators of compromise associated with the specified detection from Red Canary based on the unique detection ID and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "list_detection_marked_indicators_of_compromise",
       "output_schema": {
@@ -328,7 +328,7 @@
           "name": "detection_id",
           "value": "",
           "tooltip": "ID of the detection.",
-          "description": "ID of the detection whose indicators of compromise you want to fetch from Red Canary."
+          "description": "The unique ID of the detection whose indicators of compromise you want to retrieve from Red Canary."
         },
         {
           "title": "Page Number",
@@ -339,7 +339,7 @@
           "name": "page",
           "value": 1,
           "tooltip": "What page of results to fetch.",
-          "description": "What page of results to fetch from Red Canary. Defaults to first page."
+          "description": "The Page number from which you want the operation to return the results of the operation. Defaults to the first page."
         },
         {
           "title": "Items Per Page",
@@ -350,14 +350,14 @@
           "name": "per_page",
           "value": 50,
           "tooltip": "How many results to return per page. Default is 50.",
-          "description": "How many results to return per page from Red Canary. Default is 50. Values exceeding the max allowed (generally 100) will error."
+          "description": "The maximum number of results, per page, that this operation should return. By default, this value is set as 50. Specify a value that exceeds the maximum allowed value (generally 100) throws an error."
         }
       ]
     },
     {
       "operation": "acknowledge_detection",
       "title": "Acknowledge Detection",
-      "description": "Mark a detection as acknowledged to inform your team that it is being handled in Red Canary.",
+      "description": "Marks a detection as acknowledged to inform your team that it is being handled in Red Canary based on the unique detection ID you have specified.",
       "category": "investigation",
       "annotation": "acknowledge_detection",
       "output_schema": {
@@ -444,14 +444,14 @@
           "name": "detection_id",
           "value": "",
           "tooltip": "ID of the detection.",
-          "description": "ID of the detection which you want to acknowledge in Red Canary."
+          "description": "The unique ID of the detection that you want to mark as 'Acknowledged' in Red Canary."
         }
       ]
     },
     {
       "operation": "update_remediation_state",
       "title": "Update Remediation State",
-      "description": "Update the remediation state of detection in Red Canary based on input parameters you have specified.",
+      "description": "Updates the state of remediation state of the specified detection in Red Canary based on the unique detection ID, remediation state, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "update_remediation_state",
       "output_schema": {
@@ -538,7 +538,7 @@
           "name": "detection_id",
           "value": "",
           "tooltip": "ID of the detection.",
-          "description": "ID of the detection of which remediation state you want to update in Red Canary."
+          "description": "The unique ID of the detection whose remediation state you want to update in Red Canary."
         },
         {
           "title": "Remediation State",
@@ -555,7 +555,7 @@
           "name": "remediation_state",
           "value": "",
           "tooltip": "The way in which the detection was remediated.",
-          "description": "The way in which the detection was remediated in Red Canary."
+          "description": "Select the method using which the detection was remediated in Red Canary. You can choose from the following options: Remediated, Not Remediated False Positive, Not Remediated Sanctioned Activity, or Not Remediated Unwarranted."
         },
         {
           "title": "Comment",
@@ -566,14 +566,14 @@
           "name": "comment",
           "value": "",
           "tooltip": "The reason why the detection was remediated.",
-          "description": "Description of why and how the detection was remediated in Red Canary. This is ignored for 'remediated' state."
+          "description": "(Optional) Add a description of why and how the detection was remediated in Red Canary. This is ignored if you select the Remediation state as 'Remediated'."
         }
       ]
     },
     {
       "operation": "list_endpoints",
       "title": "Get Endpoints List",
-      "description": "Get a list of endpoints from Red Canary based on input parameters you have specified.",
+      "description": "Retrieves a list of all endpoints from Red Canary based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "list_endpoints",
       "output_schema": {
@@ -685,7 +685,7 @@
           "name": "page",
           "value": 1,
           "tooltip": "What page of results to fetch.",
-          "description": "What page of results to fetch from Red Canary. Defaults to first page."
+          "description": "The Page number from which you want the operation to return the results of the operation. Defaults to the first page."
         },
         {
           "title": "Per Page",
@@ -696,7 +696,7 @@
           "name": "per_page",
           "value": 50,
           "tooltip": "How many results to return per page. Default is 50.",
-          "description": "How many results to return per page from Red Canary. Default is 50. Values exceeding the max allowed (generally 100) will error."
+          "description": "The maximum number of results, per page, that this operation should return. By default, this value is set as 50. Specify a value that exceeds the maximum allowed value (generally 100) throws an error."
         },
         {
           "title": "Order By",
@@ -711,7 +711,7 @@
           "name": "order_by",
           "value": "",
           "tooltip": "Sort the result. Default value is Hostname.",
-          "description": "Sort the result by hostname or ID from Red Canary. Default value is Hostname."
+          "description": "Select the field using which you want to sort the results returned by this operation. You can choose between hostname (default) or ID."
         },
         {
           "title": "Other Fields",
@@ -721,14 +721,14 @@
           "type": "json",
           "name": "filter_query",
           "tooltip": "JSON field provided to enable you to enter other fields while getting endpoint details from Red Canary. example, {\"id\":12345}",
-          "description": "(Optional) Additional fields in the JSON format that you want to get endpoint details from Red Canary. For example, {\"id\":12345}"
+          "description": "(Optional) Additional fields in the JSON format based on which you want to retrieve endpoints returned by this operation. For example, {\"id\":12345}."
         }
       ]
     },
     {
       "operation": "get_endpoint",
       "title": "Get Endpoint Details",
-      "description": "Get a particular endpoint by unique identifier from Red Canary based on endpoint ID you have specified.",
+      "description": "Retrieves the details of the specified endpoint from Red Canary based on the endpoint ID you have specified.",
       "category": "investigation",
       "annotation": "get_endpoint",
       "output_schema": {
@@ -840,14 +840,14 @@
           "name": "endpoint_id",
           "value": "",
           "tooltip": "ID of the endpoint.",
-          "description": "ID of the endpoint whose details you want to fetch from Red Canary."
+          "description": "The ID of the endpoint whose details you want to retrieve from Red Canary."
         }
       ]
     },
     {
       "operation": "isolate_endpoint",
       "title": "Isolate Endpoint",
-      "description": "Isolate a set of endpoints by endpoint IDs from Red Canary.",
+      "description": "Isolates a set of endpoints on Red Canary based on a list of endpoint IDs you have specified.",
       "category": "investigation",
       "annotation": "isolate_endpoint",
       "output_schema": {
@@ -865,14 +865,14 @@
           "name": "ids",
           "value": "",
           "tooltip": "Comma Separated ID of the endpoints.",
-          "description": "A comma separated string of endpoint IDs to isolate from Red Canary."
+          "description": "A comma-seperated string of endpoint IDs that you want to isolate on Red Canary."
         }
       ]
     },
     {
       "operation": "deisolate_endpoint",
       "title": "Deisolate Endpoint",
-      "description": "Deisolate a set of endpoints by endpoint IDs from Red Canary.",
+      "description": "Removes the isolation for a set of endpoints on Red Canary based on a list of endpoint IDs you have specified.",
       "category": "investigation",
       "annotation": "deisolate_endpoint",
       "output_schema": {
@@ -890,7 +890,7 @@
           "name": "ids",
           "value": "",
           "tooltip": "Comma Separated ID of the endpoints.",
-          "description": "A comma separated string of endpoint IDs to deisolate from Red Canary."
+          "description": "A comma-seperated string of endpoint IDs that you want to remove from isolation on Red Canary."
         }
       ]
     }
